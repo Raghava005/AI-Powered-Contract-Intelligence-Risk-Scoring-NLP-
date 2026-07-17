@@ -1,0 +1,58 @@
+{
+  "version": "CUAD_v1_mini_fixture",
+  "data": [
+    {
+      "title": "ACME-SUPPLY-AGREEMENT",
+      "paragraphs": [
+        {
+          "context": "This Supply Agreement (\"Agreement\") is entered into as of January 5, 2019, by and between Acme Corp, a Delaware corporation (\"Acme\"), and Globex LLC, a New York limited liability company (\"Globex\"). This Agreement shall be governed by the laws of the State of Delaware. Either party may terminate this Agreement for convenience upon 90 days written notice to the other party.",
+          "qas": [
+            {
+              "id": "ACME-SUPPLY-AGREEMENT__Parties",
+              "question": "Highlight the parts (if any) of this contract related to \"Parties\" that should be reviewed by a lawyer. Details: The two or more parties who signed the contract.",
+              "is_impossible": false,
+              "answers": [
+                {
+                  "text": "Acme Corp",
+                  "answer_start": 90
+                },
+                {
+                  "text": "Globex LLC",
+                  "answer_start": 138
+                }
+              ]
+            },
+            {
+              "id": "ACME-SUPPLY-AGREEMENT__Governing Law",
+              "question": "Highlight the parts (if any) of this contract related to \"Governing Law\" that should be reviewed by a lawyer. Details: Which state/country's law governs the interpretation of the contract.",
+              "is_impossible": false,
+              "answers": [
+                {
+                  "text": "State of Delaware",
+                  "answer_start": 251
+                }
+              ]
+            },
+            {
+              "id": "ACME-SUPPLY-AGREEMENT__Termination For Convenience",
+              "question": "Highlight the parts (if any) of this contract related to \"Termination For Convenience\" that should be reviewed by a lawyer. Details: Specify if a party can terminate the contract without cause.",
+              "is_impossible": false,
+              "answers": [
+                {
+                  "text": "Either party may terminate this Agreement for convenience upon 90 days written notice",
+                  "answer_start": 270
+                }
+              ]
+            },
+            {
+              "id": "ACME-SUPPLY-AGREEMENT__Most Favored Nation",
+              "question": "Highlight the parts (if any) of this contract related to \"Most Favored Nation\" that should be reviewed by a lawyer. Details: Is there a clause granting the best terms offered to another customer?",
+              "is_impossible": true,
+              "answers": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
