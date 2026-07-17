@@ -49,7 +49,7 @@ add it to PATH or set `TESSERACT_CMD` in a `.env` file to the `tesseract.exe` pa
 - [x] **Day 1-2** — Environment setup; download CUAD and preprocess into flattened
       JSONL records + tokenized (RoBERTa) training format.
       See `src/data/download_cuad.py`, `src/data/preprocess.py`, `src/data/tokenize_dataset.py`.
-- [ ] **Day 3-5** — OCR ingestion pipeline for raw PDFs (digital-text extraction with OCR
+- [x] **Day 3-5** — OCR ingestion pipeline for raw PDFs (digital-text extraction with OCR
       fallback via Tesseract) plus DOCX support.
       See `src/ocr/`.
 - [ ] **Day 6-7** — Baseline spaCy NER model to extract organizations, dates, and monetary
@@ -70,4 +70,15 @@ python -m src.data.tokenize_dataset
 
 # Run tests (uses data/sample/, no network required)
 pytest tests/ -v
+```
+
+## Running Day 3-5
+
+```powershell
+# Drop source PDFs/DOCXs into data/raw/documents/, then:
+python -m src.ocr.ingest
+
+# Extracted text lands in data/processed/ocr_text/, with a per-document
+# manifest (status, char count, digital vs. OCR method) at
+# data/processed/ocr_manifest.jsonl
 ```

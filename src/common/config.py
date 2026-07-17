@@ -9,6 +9,15 @@ RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
 SAMPLE_DIR = DATA_DIR / "sample"
 
+# --- OCR ingestion (Week 1, Day 3-5) ---
+RAW_DOCS_DIR = RAW_DIR / "documents"  # source PDFs/DOCXs dropped in by users
+OCR_TEXT_DIR = PROCESSED_DIR / "ocr_text"  # extracted .txt output, one per doc
+OCR_MANIFEST_JSONL = PROCESSED_DIR / "ocr_manifest.jsonl"
+# A page with fewer extractable characters than this is treated as scanned
+# (no embedded text layer) and routed through Tesseract OCR instead.
+OCR_MIN_CHARS_PER_PAGE = 20
+OCR_DPI = 300
+
 # CUAD is distributed as a zip (contains CUADv1.json at its root, plus the
 # source contract PDFs/TXTs) rather than as a standalone raw JSON file.
 CUAD_ZIP_URL = "https://raw.githubusercontent.com/TheAtticusProject/cuad/main/data.zip"
