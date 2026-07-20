@@ -52,7 +52,7 @@ add it to PATH or set `TESSERACT_CMD` in a `.env` file to the `tesseract.exe` pa
 - [x] **Day 3-5** — OCR ingestion pipeline for raw PDFs (digital-text extraction with OCR
       fallback via Tesseract) plus DOCX support.
       See `src/ocr/`.
-- [ ] **Day 6-7** — Baseline spaCy NER model to extract organizations, dates, and monetary
+- [x] **Day 6-7** — Baseline spaCy NER model to extract organizations, dates, and monetary
       values from contract text.
       See `src/ner/`.
 
@@ -81,4 +81,27 @@ python -m src.ocr.ingest
 # Extracted text lands in data/processed/ocr_text/, with a per-document
 # manifest (status, char count, digital vs. OCR method) at
 # data/processed/ocr_manifest.jsonl
+```
+
+## Running Day 6-7
+
+```powershell
+# 1. Build weakly-labeled training data from CUAD's Parties/Date clause
+#    annotations (Parties -> ORG, Agreement/Effective/Expiration Date -> DATE)
+python -m src.ner.build_training_data
+
+# 2. Train a baseline NER model (blank English pipeline + "ner" pipe,
+#    5 epochs - CUAD contracts are long, un-truncated documents, so a single
+#    epoch takes several minutes on a laptop CPU)
+python -m src.ner.train_baseline_ner
+
+# 3. Evaluate against the training data (no held-out split yet - this is a
+#    train-fit sanity check, not a generalization measure; on the full CUAD
+#    corpus this baseline scores P=0.48 R=0.40 F1=0.44 overall, ORG F1=0.43,
+#    DATE F1=0.46). A real held-out dev split is Week 2 scope alongside the
+#    transformer fine-tuning.
+python -m src.ner.evaluate
+
+# 4. Extract entities (ORG/DATE from the trained model, MONEY via regex)
+python -m src.ner.baseline_extract "Total fees shall not exceed $2,500,000."
 ```

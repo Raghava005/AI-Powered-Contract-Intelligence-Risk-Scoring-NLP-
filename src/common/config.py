@@ -18,6 +18,27 @@ OCR_MANIFEST_JSONL = PROCESSED_DIR / "ocr_manifest.jsonl"
 OCR_MIN_CHARS_PER_PAGE = 20
 OCR_DPI = 300
 
+# --- Baseline NER (Week 1, Day 6-7) ---
+# CUAD clause categories that map cleanly onto basic entity types, used to
+# derive weakly-labeled training/eval data from CUAD's expert annotations.
+CUAD_TO_NER_LABEL = {
+    "Parties": "ORG",
+    "Agreement Date": "DATE",
+    "Effective Date": "DATE",
+    "Expiration Date": "DATE",
+}
+SPACY_BASELINE_MODEL = "en_core_web_sm"
+NER_TRAIN_DOCBIN = PROCESSED_DIR / "ner_train.spacy"
+NER_LABELS_OF_INTEREST = ("ORG", "DATE", "MONEY")
+NER_MODEL_DIR = PROJECT_ROOT / "models" / "ner_baseline"
+NER_DEV_SPLIT = 0.1
+# CUAD contracts are long, un-truncated documents, and spaCy's transition-based
+# NER trainer scales with document length - a single epoch over the full
+# training set takes ~8-9 min on a typical laptop CPU. 5 epochs is enough to
+# validate the pipeline end-to-end for a Week 1 baseline; Week 2's transformer
+# fine-tuning is where real convergence work happens.
+NER_N_ITER = 5
+
 # CUAD is distributed as a zip (contains CUADv1.json at its root, plus the
 # source contract PDFs/TXTs) rather than as a standalone raw JSON file.
 CUAD_ZIP_URL = "https://raw.githubusercontent.com/TheAtticusProject/cuad/main/data.zip"
