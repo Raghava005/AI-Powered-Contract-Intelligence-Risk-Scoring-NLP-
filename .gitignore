@@ -18,6 +18,8 @@ env/
 # Data (raw CUAD contracts and derived artifacts are large / not committed)
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/CUAD_v1.json
+
 data/processed/*
 !data/processed/.gitkeep
 !data/sample/**
