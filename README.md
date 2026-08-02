@@ -105,3 +105,260 @@ python -m src.ner.evaluate
 # 4. Extract entities (ORG/DATE from the trained model, MONEY via regex)
 python -m src.ner.baseline_extract "Total fees shall not exceed $2,500,000."
 ```
+# 🚀 Week 2 Deliverables
+
+✔ Integrated the Official CUAD Dataset
+
+✔ Implemented text preprocessing pipeline
+
+✔ Cleaned and normalized contract clauses
+
+✔ Encoded legal clause labels
+
+✔ Generated dataset statistics
+
+✔ Created Train / Validation / Test split
+
+✔ Fine-tuned a Transformer model
+
+✔ Evaluated model performance
+
+✔ Built an interactive prediction system
+
+---
+
+# ✨ Features
+
+- 📄 Official CUAD Dataset Support
+- 🧹 Automated Text Preprocessing
+- 🏷 Label Encoding
+- 📊 Dataset Statistics
+- 🤖 Transformer-based Legal Clause Classification
+- 📈 Accuracy, Precision, Recall & F1 Evaluation
+- 💾 Model Saving & Loading
+- 🔍 Interactive Clause Prediction
+- 🔁 Reproducible Training Pipeline
+
+---
+
+# 🛠 Tech Stack
+
+## Programming Language
+
+- Python
+
+## Machine Learning
+
+- PyTorch
+- Hugging Face Transformers
+- Hugging Face Datasets
+
+## NLP
+
+- RoBERTa / DistilRoBERTa
+- Tokenization
+- Text Normalization
+
+## Evaluation
+
+- Scikit-learn
+
+## Dataset
+
+- Official CUAD Dataset
+
+---
+
+# 📂 Project Structure
+
+```text
+AI-Powered-Contract-Intelligence-Risk-Scoring-NLP/
+
+│
+├── data/
+│   ├── raw/
+│   │   └── CUAD_v1.json
+│   ├── processed/
+│
+├── models/
+│   └── legal_clause_classifier/
+│
+├── results/
+│   └── evaluation_results.json
+│
+├── src/
+│   ├── classification/
+│   │   ├── config.py
+│   │   ├── dataset.py
+│   │   ├── train.py
+│   │   ├── evaluate.py
+│   │   └── predict.py
+│   │
+│   ├── ner/
+│   ├── ocr/
+│   └── common/
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+# 📚 Dataset
+
+This project uses the **Contract Understanding Atticus Dataset (CUAD)**.
+
+### Dataset Highlights
+
+- 500+ Commercial Contracts
+- 41 Legal Clause Categories
+- Real-world Legal Documents
+- Expert Legal Annotations
+
+---
+
+# 🔄 Data Preprocessing Pipeline
+
+```
+Official CUAD Dataset
+          │
+          ▼
+Load JSON
+          │
+          ▼
+Remove Impossible Clauses
+          │
+          ▼
+Text Cleaning
+          │
+          ▼
+Whitespace Normalization
+          │
+          ▼
+Label Extraction
+          │
+          ▼
+Label Encoding
+          │
+          ▼
+Dataset Statistics
+```
+
+---
+
+# 🤖 Model Training Pipeline
+
+```
+Official CUAD Dataset
+          │
+          ▼
+Preprocessing
+          │
+          ▼
+Tokenization
+          │
+          ▼
+Train / Validation / Test Split
+          │
+          ▼
+Transformer Training
+          │
+          ▼
+Model Evaluation
+          │
+          ▼
+Saved Model
+```
+
+---
+
+# ⚙ Model Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Model | DistilRoBERTa / RoBERTa |
+| Epochs | 3 |
+| Batch Size | 4 |
+| Learning Rate | 2e-5 |
+| Max Sequence Length | 256 |
+| Dataset | Official CUAD |
+
+---
+
+# 📈 Evaluation Metrics
+
+The model is evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+
+### Sample Evaluation
+
+| Metric | Score |
+|---------|------:|
+| Accuracy | 52% |
+| Precision | 44.9% |
+| Recall | 52% |
+| F1 Score | 44.5% |
+
+> *Results shown are from the current Week 2 training configuration using a subset of the official CUAD dataset.*
+
+---
+
+# ▶ Running the Project
+
+## Train
+
+```bash
+python src/classification/train.py
+```
+
+## Evaluate
+
+```bash
+python src/classification/evaluate.py
+```
+
+## Predict
+
+```bash
+python src/classification/predict.py
+```
+
+---
+
+# 💡 Sample Prediction
+
+### Input
+
+```
+Either party may terminate this agreement by giving thirty days written notice.
+```
+
+### Output
+
+```
+Predicted Clause:
+Termination For Convenience
+
+Confidence:
+84.7%
+```
+
+*Sample output for illustration.*
+
+---
+
+# 🔮 Future Improvements
+
+- Train on the complete CUAD dataset using GPU resources.
+- Hyperparameter optimization.
+- Multi-label legal clause classification.
+- Named Entity Recognition (NER).
+- FastAPI REST API.
+- Semantic contract search using vector databases.
+- Web dashboard for contract analysis.
+
