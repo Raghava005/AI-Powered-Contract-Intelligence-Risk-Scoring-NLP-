@@ -6,7 +6,7 @@ Configuration file for Legal Clause Classification
 # Model Configuration
 # -----------------------------
 
-MODEL_NAME = "roberta-base"
+MODEL_NAME = "distilroberta-base"
 
 # -----------------------------
 # Dataset Paths
@@ -30,7 +30,7 @@ MODEL_SAVE_PATH = "models/legal_clause_classifier"
 
 MAX_LENGTH = 256
 
-BATCH_SIZE = 8
+BATCH_SIZE = 4
 
 LEARNING_RATE = 2e-5
 
@@ -47,3 +47,10 @@ TRAIN_SPLIT = 0.8
 VALIDATION_SPLIT = 0.1
 
 TEST_SPLIT = 0.1
+# ============================================================
+# Training Dataset Configuration
+# ============================================================
+
+USE_SUBSET = True
+
+MAX_TRAIN_SAMPLES = 1000

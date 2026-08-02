@@ -35,7 +35,7 @@ def load_cuad_dataset(file_path=DATASET_PATH):
                 if qa.get("is_impossible", False):
                     continue
 
-                label = qa["id"].split("__")[-1]
+                label = qa["id"].split("__",1)[-1]
 
                 for answer in qa["answers"]:
 
@@ -104,11 +104,11 @@ def dataset_statistics(dataset):
 
 if __name__ == "__main__":
 
-    dataset = load_cuad_dataset()
+    dataset = load_cuad_dataset(DATASET_PATH)
 
     dataset, label2id, id2label = encode_labels(dataset)
 
-    dataset_statistics(dataset)
+    print(f"Total Samples : {len(dataset)}")
+    print(f"Total Labels  : {len(label2id)}")
 
-    print("\nExample Sample:\n")
-    print(dataset[0])
+    dataset_statistics(dataset)
