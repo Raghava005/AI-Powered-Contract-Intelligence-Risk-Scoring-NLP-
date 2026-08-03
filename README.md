@@ -362,3 +362,14 @@ Confidence:
 - Semantic contract search using vector databases.
 - Web dashboard for contract analysis.
 
+## Week 3 - Day 1
+
+- Integrated Sentence Transformers for semantic embeddings.
+- Generated dense vector embeddings for legal contract clauses.
+- Stored embeddings and metadata for semantic retrieval.
+
+## Week 3 - Day 2
+
+- Built a FAISS vector database from generated sentence embeddings.
+- Indexed all legal clause vectors for efficient similarity search.
+- Saved the searchable FAISS index for semantic retrieval.
