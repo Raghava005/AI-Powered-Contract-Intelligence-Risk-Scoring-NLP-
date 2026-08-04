@@ -373,3 +373,22 @@ Confidence:
 - Built a FAISS vector database from generated sentence embeddings.
 - Indexed all legal clause vectors for efficient similarity search.
 - Saved the searchable FAISS index for semantic retrieval.
+
+## Week 3 - Day 3
+
+- Implemented semantic search using FAISS.
+- Added natural language query support.
+- Retrieved top matching legal clauses with similarity scores.
+
+## Week 3 - Day 4
+
+- Initialized FastAPI backend.
+- Added REST API structure.
+- Implemented health and version endpoints.
+- Enabled automatic Swagger documentation.
+
+## Week 3 - Day 5
+
+- Implemented document upload API using FastAPI.
+- Added validation for PDF and DOCX files.
+- Saved uploaded documents for downstream OCR and NLP processing.

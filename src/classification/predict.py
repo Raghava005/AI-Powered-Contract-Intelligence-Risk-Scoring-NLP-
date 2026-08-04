@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-from config import MODEL_SAVE_PATH, MAX_LENGTH
+from src.classification.config import MODEL_SAVE_PATH, MAX_LENGTH
 
 
 # ============================================================
