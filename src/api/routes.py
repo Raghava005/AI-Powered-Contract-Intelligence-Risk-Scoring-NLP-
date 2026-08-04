@@ -46,7 +46,17 @@ def version():
     return {
         "version": "1.0.0"
     }
+@router.get("/info")
+def info():
 
+    return {
+        "project": "AI-Powered Contract Intelligence",
+        "version": "1.1.0",
+        "embedding_model": "all-MiniLM-L6-v2",
+        "classifier": "RoBERTa",
+        "vector_database": "FAISS",
+        "status": "Production Ready"
+    }
 
 # ---------------------------------------------------
 # Upload + Metadata Extraction

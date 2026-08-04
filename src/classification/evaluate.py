@@ -4,7 +4,7 @@ import random
 import numpy as np
 import torch
 
-from datasets import Dataset
+from src.classification.dataset import  Dataset
 from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification,

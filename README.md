@@ -392,3 +392,99 @@ Confidence:
 - Implemented document upload API using FastAPI.
 - Added validation for PDF and DOCX files.
 - Saved uploaded documents for downstream OCR and NLP processing.
+
+Week 3 - Day 6: Contract Intelligence APIs
+Objective
+
+## Implemented REST APIs for contract intelligence using FastAPI.
+
+Features
+Upload contract files
+Predict legal clause category
+Perform semantic search using FAISS
+Health monitoring endpoint
+Version endpoint
+Implemented APIs
+POST /upload
+
+Uploads PDF and DOCX contract files.
+
+POST /predict
+
+Predicts the legal clause category using the trained RoBERTa classifier.
+
+POST /search
+
+Performs semantic search using Sentence Transformers and the FAISS vector database.
+
+GET /health
+
+Checks whether the API service is running.
+
+GET /version
+
+Returns the current API version.
+
+Technologies Used
+FastAPI
+Hugging Face Transformers
+Sentence Transformers
+FAISS
+NumPy
+Python
+Result
+
+Successfully developed and tested REST APIs for contract upload, legal clause prediction, and semantic search.
+
+## Week 3 - Day 7: API Documentation & Project Information
+Objective
+
+Enhanced the API by adding project information and interactive API documentation.
+
+Features Added
+Project information endpoint
+Interactive Swagger UI documentation
+API version information
+Health monitoring
+Upload API
+Prediction API
+Semantic Search API
+New Endpoint
+GET /info
+
+Returns project metadata.
+
+Example Response
+
+{
+    "project": "AI-Powered Contract Intelligence",
+    "version": "1.1.0",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "classifier": "RoBERTa",
+    "vector_database": "FAISS",
+    "status": "Production Ready"
+}
+API Documentation
+
+Swagger UI
+
+http://127.0.0.1:8000/docs
+
+OpenAPI Specification
+
+http://127.0.0.1:8000/openapi.json
+Available APIs
+GET /
+GET /health
+GET /version
+GET /info
+POST /upload
+POST /predict
+POST /search
+Technologies Used
+FastAPI
+Swagger UI (OpenAPI)
+FAISS
+Hugging Face Transformers
+Sentence Transformers
+Python

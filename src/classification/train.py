@@ -1,4 +1,4 @@
-from datasets import Dataset
+from src.classification.dataset import  Dataset
 from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification,
